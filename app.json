@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "sigamater",
+    "slug": "sigamater",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "sigamater"
+}
