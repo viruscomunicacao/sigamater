@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 
 const Home = ()=>{
     const jsCode =
-"let meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, initial-scale=0.8, maximum-scale=1, user-scalable=0'); document.getElementsByTagName('head')[0].appendChild(meta);";
+"let meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=0'); document.getElementsByTagName('head')[0].appendChild(meta);";
     return (
       <PaperProvider theme={theme}>
          <Appbar title={<img src="https://unsplash.it/40/40"/>}>
