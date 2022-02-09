@@ -3,6 +3,10 @@
     "name": "sigamater",
     "slug": "sigamater",
     "version": "1.0.0",
+    "splash": {
+      "image": "./src/assets/logo.png",
+      "backgroundColor": "#88CE5B"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]

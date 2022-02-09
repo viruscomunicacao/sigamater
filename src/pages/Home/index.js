@@ -1,6 +1,6 @@
 import React,{useState, ChangeEvent, useEffect, View} from 'react';
 import { WebView } from 'react-native-webview';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { Drawer, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
 import { StyleSheet, Image } from 'react-native';
 import Logo from '../../assets/logo.png'
@@ -30,14 +30,17 @@ const styles = StyleSheet.create({
 });
 
 const Home = ()=>{
+    const [active, setActive] = React.useState(false);
+
     const jsCode =
-"let meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=0'); document.getElementsByTagName('head')[0].appendChild(meta);";
+"let meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width, initial-scale=0.7, maximum-scale=0.7, user-scalable=0'); document.getElementsByTagName('head')[0].appendChild(meta);";
     return (
       <PaperProvider theme={theme}>
          <Appbar title={<img src="https://unsplash.it/40/40"/>}>
           <Appbar.Action
             icon="menu"
-            onPress={() => console.log('Pressed archive')}
+            color='green'
+            onPress={() => setActive(!active)}
             />
           
           <Appbar.Content
@@ -60,6 +63,18 @@ const Home = ()=>{
             setz         
             style={{ }}
       />
+       <Drawer.Section style={{width: '40%'}} title="Some title">
+      <Drawer.Item
+        label="First Item"
+        active={active === 'first'}
+        onPress={() => setActive('first')}
+      />
+      <Drawer.Item
+        label="Second Item"
+        active={active === 'second'}
+        onPress={() => setActive('second')}
+      />
+    </Drawer.Section>
       </PaperProvider>
     );
 }
